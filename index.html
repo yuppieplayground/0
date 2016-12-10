@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>hello</title>
+	<audio control autoplay> <source src="DJ NATE - MY HEART.mp3" type="audio/mpeg"></audio>
+	
+</head>
+
+<body>
+<style>
+ p{font-family:monospace;
+ color:#000000;
+ font-size:12px;}
+</style>
+<img src="Title.jpg">
+<a href="im208144.jpg" target="frame1" onclick=window.open("im208144.jpg",'frame2')>
+<img src="one.jpg">
+</a>
+<p>where can I find the ear?</p>
+<iframe name="frame1" width="500px" height="500px" style="border:0px solid #000000;"></iframe>
+<iframe name="frame2" width="500px" height="500px" style="border:0px solid #000000;"></iframe>
+<a href="tumblr_mhcoj8s7Mw1ri6x74o1_1280.jpg" target="frame4" onclick=window.open("tumblr_mhcoj8s7Mw1ri6x74o1_1280.jpg",'frame3');window.open("tumblr_mhcoj8s7Mw1ri6x74o1_1280.jpg",'frame5');window.open("tumblr_mhcoj8s7Mw1ri6x74o1_1280.jpg",'frame6')>
+<img src="two.jpg">
+</a>
+<p>what does a sexy ear look like?</p>
+<iframe name="frame3" width="300px" height="500px" style="border:0px solid #000000;"></iframe>
+<iframe name="frame4" width="300px" height="500px" style="border:0px solid #000000;"></iframe>
+<iframe name="frame5" width="300px" height="500px" style="border:0px solid #000000;"></iframe>
+<iframe name="frame6" width="300px" height="500px" style="border:0px solid #000000;"></iframe>
+<img src="three.jpg">
+<p>artifacts</p>
+<img src="four.jpg">
+<p>arto'facts</p>
+<img src="five.jpg">
+<p>art_facts</p>
+<img src="six.jpg">
+<p>thanks for listening...</p>
+</body>
+<meta charset="utf-8">
+<style>
+
+path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+</style>
+<svg width="960" height="500">
+  <rect fill="#fff" width="100%" height="100%"></rect>
+</svg>
+<script src="//d3js.org/d3.v4.min.js"></script>
+<script>
+
+var line = d3.line()
+    .curve(d3.curveBasis);
+
+var svg = d3.select("svg")
+    .call(d3.drag()
+        .container(function() { return this; })
+        .subject(function() { var p = [d3.event.x, d3.event.y]; return [p, p]; })
+        .on("start", dragstarted));
+
+function dragstarted() {
+  var d = d3.event.subject,
+      active = svg.append("path").datum(d),
+      x0 = d3.event.x,
+      y0 = d3.event.y;
+
+  d3.event.on("drag", function() {
+    var x1 = d3.event.x,
+        y1 = d3.event.y,
+        dx = x1 - x0,
+        dy = y1 - y0;
+
+    if (dx * dx + dy * dy > 100) d.push([x0 = x1, y0 = y1]);
+    else d[d.length - 1] = [x1, y1];
+    active.attr("d", line);
+  });
+}
+
+</script>
+</html>
